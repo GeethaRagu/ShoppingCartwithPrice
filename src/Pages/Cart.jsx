@@ -3,7 +3,6 @@ import { mycontext } from "../App";
 import { Card, CardBody, CardText, Col, Container, Row } from "react-bootstrap";
 
 const Cart = () => {
-  
   const [
     items,
     setitems,
@@ -13,10 +12,11 @@ const Cart = () => {
     setSelectedProducts,
   ] = useContext(mycontext);
   //console.log(selectedproducts);
-  if(selectedproducts.length===0){
-    document.getElementById("total_main_container").innerHTML = "No Items in the cart";
+  if (selectedproducts.length === 0) {
+    document.getElementById("total_main_container").innerHTML =
+      "No Items in the cart";
   }
-  
+
   const totalPrice = selectedproducts.reduce(
     (total, data) => total + data.price * (data.quantity || 1),
     0
@@ -47,12 +47,10 @@ const Cart = () => {
       });
     });
   };
-  const RemovefromCart = (id,quantity) => {
+  const RemovefromCart = (id, quantity) => {
     //console.log(quantity);
-    if(quantity)
-    setCartCount((cartcount) => cartcount - quantity);
-  else
-  setCartCount((cartcount) => cartcount - 1);
+    if (quantity) setCartCount((cartcount) => cartcount - quantity);
+    else setCartCount((cartcount) => cartcount - 1);
     const productafterremoved = selectedproducts.filter(
       (element) => element.id !== parseInt(id)
     );
@@ -78,16 +76,6 @@ const Cart = () => {
                     </div>
                     <div className="quantity_container">
                       <span>
-                        <button
-                          onClick={() =>
-                            handleInc(element.id, element.quantity || 1)
-                          }
-                        >
-                          +
-                        </button>
-                      </span>
-                      <span>{element.quantity ? element.quantity : 1}</span>
-                      <span>
                         {element.quantity > 1 ? (
                           <button
                             onClick={() =>
@@ -100,6 +88,16 @@ const Cart = () => {
                           <button>-</button>
                         )}
                       </span>
+                      <span>{element.quantity ? element.quantity : 1}</span>
+                      <span>
+                        <button
+                          onClick={() =>
+                            handleInc(element.id, element.quantity || 1)
+                          }
+                        >
+                          +
+                        </button>
+                      </span>
                     </div>
                     <div className="price_container">
                       <strong>${element.price}</strong>
@@ -107,7 +105,7 @@ const Cart = () => {
                       <button
                         className="btn btn-danger"
                         onClick={() => {
-                          RemovefromCart(element.id,element.quantity || 1);
+                          RemovefromCart(element.id, element.quantity || 1);
                         }}
                       >
                         Remove
