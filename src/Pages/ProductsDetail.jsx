@@ -21,6 +21,8 @@ const ProductsDetail = () => {
     (elements) => elements.id === parseInt(productid)
   );
   const [status, setStatus] = useState(true);
+    
+    
 
   const AddtoCart = (id, title, des, price, image) => {
     //console.log(selectedproducts);
@@ -122,7 +124,7 @@ const ProductsDetail = () => {
                     </Card.Body>
                   </Card>
                 </Col>
-                
+              
               </div>
             );
           })}

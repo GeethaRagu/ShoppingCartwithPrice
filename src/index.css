@@ -1,3 +1,7 @@
+/**section css**/
+section{
+    margin:0 0 2rem 0;
+}
 /**Navigation css**/
 nav{
     margin:0 0 2rem 0;
@@ -32,6 +36,9 @@ nav{
     
 }
 /**cart css**/
+.cart_main_container .card{
+    background-color: #F6F5F8;
+}
 .cart_container,.quantity_container,.total_container{
     display: flex;
 }
