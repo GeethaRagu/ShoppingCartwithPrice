@@ -1,0 +1,67 @@
+/**Navigation css**/
+nav{
+    margin:0 0 2rem 0;
+}
+/**Products list css**/
+.card{
+    padding:1rem 0 0 0;
+}
+.list_image{
+
+    width:20rem;
+    height:200px;
+    margin:0px auto;
+}
+/**Product detail css**/
+@media screen and (min-width: 900px){
+    .product_detail_container{
+        width:100%;
+        display:flex;
+    }
+}
+.product_detail_container{
+    width:100%;
+}
+.carousel-inner img{
+    height:500px;
+    width:620px;
+
+}
+.carousel-control-prev span,.carousel-control-next span{
+    border:1px solid black;
+    
+}
+/**cart css**/
+.cart_container,.quantity_container,.total_container{
+    display: flex;
+}
+.cart_container{
+    width:100%;
+
+}
+.cart_container div{
+  
+    width:25%;
+}
+.quantity_container,.price_container{
+    justify-content: right;
+}
+.quantity_container span,.price_container{
+    margin:2rem 1rem 0 1rem;
+}
+.cart_main_container .card{
+    margin:2rem 0 0 0;
+}
+.price_container button{
+    margin:2rem 0 0 0;
+}
+.total_container div{
+    width:50%;
+    text-align: center;
+    padding:1rem 0 1rem 0;
+}
+.total_container .left{
+    text-align: left;
+    padding-left:2rem;
+    color:gray;
+}
