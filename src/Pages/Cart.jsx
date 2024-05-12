@@ -73,7 +73,7 @@ const Cart = () => {
                     <div>
                       <h1>{element.title}</h1>
                       <CardText>{element.description}</CardText>
-                      <div id={`price${element.id}`}>{element.price}</div>
+                     
                     </div>
                     <div className="quantity_container">
                       <span>
