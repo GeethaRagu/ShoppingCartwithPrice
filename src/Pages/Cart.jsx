@@ -12,11 +12,12 @@ const Cart = () => {
     setSelectedProducts,
   ] = useContext(mycontext);
   //console.log(selectedproducts);
-  if (selectedproducts.length === 0) {
-    document.getElementById("total_main_container").innerHTML =
-      "No Items in the cart";
-  }
-  
+ 
+  // if (selectedproducts.length === 0) {
+  //   document.getElementById("total_main_container").innerHTML =
+  //     "No Items in the cart";
+  // }
+
   const totalPrice = selectedproducts.reduce(
     (total, data) => total + data.price * (data.quantity || 1),
     0
