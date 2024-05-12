@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { mycontext } from "../App";
 import { Card, CardBody, CardText, Col, Container, Row } from "react-bootstrap";
 
-const Cart = () => {
+const Cart = () => {    // get context values
   const [
     items,
     setitems,
@@ -11,21 +11,18 @@ const Cart = () => {
     selectedproducts,
     setSelectedProducts,
   ] = useContext(mycontext);
-  //console.log(selectedproducts);
- 
-  // if (selectedproducts.length === 0) {
-  //   document.getElementById("total_main_container").innerHTML =
-  //     "No Items in the cart";
-  // }
-
+ //Total price
   const totalPrice = selectedproducts.reduce(
     (total, data) => total + data.price * (data.quantity || 1),
     0
   );
+  //Total quantity
   const totalQuantity = selectedproducts.reduce(
     (total, data) => total + (data.quantity || 1),
     0
   );
+
+  //increment quantity to 1 if items have quantity key otherwise add quantity key and set value to 1
   const handleInc = (id, quantity) => {
     setCartCount((cartcount) => cartcount + 1);
     setSelectedProducts((curr) => {
@@ -37,6 +34,7 @@ const Cart = () => {
       });
     });
   };
+  //decrement items in the cart
   const handleDec = (id, quantity) => {
     setCartCount((cartcount) => cartcount - 1);
     setSelectedProducts((curr) => {
@@ -48,14 +46,15 @@ const Cart = () => {
       });
     });
   };
+
+  // Remove items from cart
   const RemovefromCart = (id, quantity) => {
-    //console.log(quantity);
+
     if (quantity) setCartCount((cartcount) => cartcount - quantity);
     else setCartCount((cartcount) => cartcount - 1);
     const productafterremoved = selectedproducts.filter(
       (element) => element.id !== parseInt(id)
     );
-    //console.log("after deleted",productafterremoved);
     setSelectedProducts(productafterremoved);
   };
   return (

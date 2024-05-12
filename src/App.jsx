@@ -8,6 +8,7 @@ import Cart from "./Pages/Cart";
 
 //Create Context
 export const mycontext = createContext("");
+//Array of objects of Products list
 const App = () => {
   const products = [
     {
@@ -100,9 +101,9 @@ const App = () => {
       ],
     },
   ];
-  const [items, setItems] = useState(products);
-  const [cartcount,setCartCount] =useState(0);
-  const [selectedproducts,setSelectedProducts] =useState([]);
+  const [items, setItems] = useState(products);  //state for items
+  const [cartcount,setCartCount] =useState(0);  //state for count
+  const [selectedproducts,setSelectedProducts] =useState([]);  //state for cart items
   return (
     <>
       <BrowserRouter>
